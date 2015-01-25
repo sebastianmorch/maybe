@@ -1,0 +1,21 @@
+{
+	"name": "morch/maybe",
+	"description": "Optional variables.",
+	"keywords": ["optional", ""],
+	"license": "MIT",
+	"type": "project",
+	"require": {
+		"phpspec/phpspec": "~2.1"
+	},
+	"require-dev": {
+	},
+	"autoload": {
+		"psr-4": {
+			"Morch\\": "src/Morch"
+		}
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "stable"
+}
