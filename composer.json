@@ -1,7 +1,7 @@
 {
 	"name": "morch/maybe",
 	"description": "Optional variables.",
-	"keywords": ["optional", ""],
+	"keywords": ["optionals", "optional chaining"],
 	"license": "MIT",
 	"type": "project",
 	"require": {
