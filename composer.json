@@ -5,9 +5,9 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"phpspec/phpspec": "~2.1"
 	},
 	"require-dev": {
+		"phpspec/phpspec": "~2.1"
 	},
 	"autoload": {
 		"psr-4": {
