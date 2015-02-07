@@ -36,7 +36,7 @@ The package is most easily installed using composer. It can be done through the 
 composer require morch/maybe:dev-master
 ```
 Or by adding it to the requirements in your composer.json file:
-```
+```json
 "require": {
   "morch/maybe": "dev-master"
 }
