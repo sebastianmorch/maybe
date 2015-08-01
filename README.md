@@ -1,5 +1,5 @@
 # Maybe
-Maybe is a package that allows you to use optional variables in your code. Optional values have many benefits. For instance they will allow you to chain method calls without risking invoking a method in a null object. This example is illustrated below.
+Maybe is a package that allows you to use optional variables in your code. Optional values have many benefits. For instance they will allow you to chain method calls without risking invoking a method on a null object. This example is illustrated below.
 ```php
 class MyClass
 {
@@ -87,3 +87,13 @@ When calling a method or getting an attribute, the returned optional can be unwr
 $result = $optional->someMethod_();
 ```
 When unwrapping an optional, an exception will be thrown, if the optional is a `None`, so unwrapping should only be used when you are sure it contains a value. Sometimes this will be clear from the code, but when it's not, you can call the `is()` method on the optional. It will return `true` if the optional contains a value an `false` if not.
+```php
+if ($optional->is())
+{
+  $result = $optional->unwrap();
+}
+```
+It is also possible to specify an optional value when unwrapping. If the optional is a `None` the default value is returned, instead of throwing an exception. If the optional is a `Some` the default value is ignored.
+```php
+$result = $optional->unwrap('foo');
+```
