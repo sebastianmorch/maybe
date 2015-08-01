@@ -12,6 +12,11 @@ class NoneSpec extends ObjectBehavior
 		$this->someMethod()->shouldReturnAnInstanceOf('\Morch\Maybe\None');
 	}
 
+    public function it_can_tell_if_its_a_value()
+    {
+        $this->is()->shouldReturn(false);
+    }
+
     public function it_throw_an_exception_when_unwrapped()
     {
     	$this->shouldThrow('\Morch\Maybe\UnwrappingException')->during('unwrap');
@@ -29,6 +34,11 @@ class NoneSpec extends ObjectBehavior
 
     public function it_throws_an_exception_when_forcing_unwrapping_of_attribute()
     {
-    	$this->shouldThrow('\Morch\Maybe\UnwrappingException')->during('__get', ['foo_']);	
+    	$this->shouldThrow('\Morch\Maybe\UnwrappingException')->during('__get', ['foo_']);
+    }
+
+    public function it_returns_default_value_when_unwrapped_with_default_value()
+    {
+        $this->unwrap('foo')->shouldReturn('foo');
     }
 }

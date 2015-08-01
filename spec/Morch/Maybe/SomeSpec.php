@@ -24,6 +24,11 @@ class SomeSpec extends ObjectBehavior
     	$this->unwrap()->shouldReturn($value);
     }
 
+    public function it_unwraps_its_value_though_given_a_default(Value $value)
+    {
+        $this->unwrap('foo')->shouldReturn($value);
+    }
+
     public function it_can_tell_if_its_a_value(Value $value)
     {
     	$this->is()->shouldReturn(true);

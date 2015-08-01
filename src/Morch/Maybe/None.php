@@ -10,7 +10,7 @@ final class None extends Maybe
 {
 	/**
 	 * Handle method calls.
-	 * 
+	 *
 	 * @param  string $method
 	 * @param  array $parameters
 	 * @return \Morch\Maybe\None
@@ -23,7 +23,7 @@ final class None extends Maybe
 
 	/**
 	 * Handle get operations.
-	 * 
+	 *
 	 * @param  string $attribute
 	 * @return \Morch\Maybe\None
 	 * @throws \Morch\Maybe\UnwrappingException
@@ -35,7 +35,7 @@ final class None extends Maybe
 
 	/**
 	 * Handle set operations.
-	 * 
+	 *
 	 * @param  string $attribute
 	 * @param  mixed $value
 	 * @return void
@@ -48,7 +48,7 @@ final class None extends Maybe
 
 	/**
 	 * Handle the invokation of an operation.
-	 * 
+	 *
 	 * @param  string $name
 	 * @return \Morch\Maybe\None
 	 * @throws \Morch\Maybe\UnwrappingException
@@ -60,23 +60,25 @@ final class None extends Maybe
 			throw new UnwrappingException('Attempting to force unwrapping of a none-value.');
 		}
 
-		return new None;	
+		return new None;
 	}
 
 	/**
 	 * Unwrap the optional value.
-	 * 
+	 *
 	 * @return mixed
 	 * @throws \Morch\Maybe\UnwrappingException
 	 */
 	public function unwrap()
 	{
+		if ($default = array_pop(func_get_args())) return $default;
+
 		throw new UnwrappingException('Unwrapping a none-value.');
 	}
 
 	/**
 	 * Determine wether the optional contains a value.
-	 * 
+	 *
 	 * @return boolean
 	 */
 	public function is()
